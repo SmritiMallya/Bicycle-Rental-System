@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('./bicycle1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .login-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 60px; /* Increased padding */
+            border-radius: 15px; /* Increased border-radius for smoother edges */
+            text-align: center;
+            width: 400px; /* Increased width */
+        }
+
+        h1 {
+            font-size: 3.5em; /* Increased font size */
+            margin-bottom: 30px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px; /* Increased padding */
+            margin-bottom: 25px; /* Increased margin between inputs */
+            font-size: 1.5em; /* Increased font size */
+            border: none;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 18px; /* Increased padding */
+            font-size: 1.8em; /* Increased font size */
+            cursor: pointer;
+            border-radius: 10px; /* Rounded corners */
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .error {
+            color: #ff4d4d;
+            font-size: 1.5em; /* Increased error message font size */
+            margin-top: 10px; /* Added some space above error message */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="error" class="error"></p>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorElement = document.getElementById('error');
+
+            if (username === 'admin' && password === 'password123') {
+                window.location.href = 'rental.html'; // Redirect to rental page
+            } else {
+                errorElement.textContent = 'Invalid username or password';
+            }
+        }
+    </script>
+</body>
+</html>
